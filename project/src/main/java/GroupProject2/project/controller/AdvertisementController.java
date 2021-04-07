@@ -61,6 +61,9 @@ public class AdvertisementController {
 //save the information of new ad
     @RequestMapping("/saveAdvertisement")
     public ModelAndView saveAccount(@ModelAttribute("advertisement")Advertisement advertisement, ModelMap model){
+        //get board >> get ID >> set advertisement board
+        //set advertisement's board
+        advertisement.setBoard(toTheBoard(advertisement.getBoard()).getBoardID());
         //minus the board space
         useBoard(advertisement.getBoard());
         advertisementService.createAdvertisement(advertisement);
@@ -69,6 +72,9 @@ public class AdvertisementController {
 //save the change
     @RequestMapping("/saveExistAdvertisement")
     public ModelAndView saveExistAccount(@ModelAttribute("advertisement")Advertisement advertisement, ModelMap model){
+        //get board >> get ID >> set advertisement board
+        //set advertisement's board
+        advertisement.setBoard(toTheBoard(advertisement.getBoard()).getBoardID());
         //minus the board space
         if(!advertisement.getBoard().equals(holdBoardID)){
             addBoard(holdBoardID);
