@@ -10,6 +10,7 @@ public class Advertisement {
     private String description;
     private String poster;
     private String board;
+    private int boardRID;
 
     public Advertisement() {}
 
@@ -20,6 +21,14 @@ public class Advertisement {
         this.board = board;
     }
 
+    public int getBoardRID() {
+        return boardRID;
+    }
+
+    public void setBoardRID(int boardRID) {
+        this.boardRID = boardRID;
+    }
+    
     public String getAdID() {
         return adID;
     }
