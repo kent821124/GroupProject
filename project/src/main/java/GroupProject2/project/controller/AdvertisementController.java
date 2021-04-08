@@ -113,6 +113,8 @@ public class AdvertisementController {
         //list all board
         Collection<Board> allData = boardService.getBoards();
         List<Board> all = new ArrayList<>();
+        //add the using board to the first
+        all.add(findByBoardId(holdBoardID));
         for(Iterator<Board> itor = allData.iterator();itor.hasNext();){
             Board b = itor.next();
             if(b.getBoardID().equals(holdBoardID)){
@@ -120,7 +122,7 @@ public class AdvertisementController {
             }
             all.add(b);
         }
-        all.add(findByBoardId(holdBoardID));
+        
         model.addAttribute("allBoardOption", all);
         
         model.addAttribute("advertisement",a);
