@@ -54,7 +54,7 @@ public class AdvertisementController {
 
 //move to add ad page
     @RequestMapping("/addAdvertisement")
-    public ModelAndView addAdvertisement(@ModelAttribute("advertisement") Advertisement advertisement, Model model){
+    public ModelAndView addAdvertisement(@ModelAttribute("advertisement") Advertisement advertisement, ModelMap model){
         //list all board
         Collection<Board> allData = boardService.getBoards();
         List<Board> all = new ArrayList<>();
