@@ -55,7 +55,15 @@ public class AdvertisementController {
 //move to add ad page
     @RequestMapping("/addAdvertisement")
     public String addAdvertisement(@ModelAttribute("advertisement") Advertisement advertisement, Model model){
-
+        //list all board
+        Collection<Board> allData = boardService.getBoards();
+        List<Board> all = new ArrayList<>();
+        for(Iterator<Board> itor = allData.iterator();itor.hasNext();){
+            Board b = itor.next();
+            all.add(b);
+        }
+        model.addAttribute("allBoardOption", all);
+        
         return "addAdvertisement";
     }
 //save the information of new ad
@@ -89,7 +97,15 @@ public class AdvertisementController {
     public String editAdvertisement(@RequestParam String advertisementId, Model model){
         Advertisement a = findByAdvertisementId(advertisementId);
         holdBoardID = a.getBoard();
-
+        //list all board
+        Collection<Board> allData = boardService.getBoards();
+        List<Board> all = new ArrayList<>();
+        for(Iterator<Board> itor = allData.iterator();itor.hasNext();){
+            Board b = itor.next();
+            all.add(b);
+        }
+        model.addAttribute("allBoardOption", all);
+        
         model.addAttribute("advertisement",a);
         return "editAdvertisement";
     }
