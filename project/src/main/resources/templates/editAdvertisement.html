@@ -33,7 +33,7 @@
             <td>
                 <select  th:field="${advertisement.Board}" >
                     <option th:each="board : ${allBoardOption} " th:value="${board.boardRID}">
-                        <p th:text="${board.boardRID}"></p>
+                        <p th:text="${board.boardRID}"></p> ) <p th:text="${board.location}"></p>
                     </option>
                 </select>
             </td>
