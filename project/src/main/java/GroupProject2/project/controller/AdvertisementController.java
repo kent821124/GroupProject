@@ -119,6 +119,9 @@ public class AdvertisementController {
                 all.add(b);
             }
         }
+        if(all.isEmpty()){
+            all.add(findByBoardId(holdBoardID));
+        }
         model.addAttribute("allBoardOption", all);
         
         model.addAttribute("advertisement",a);
