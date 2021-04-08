@@ -26,12 +26,15 @@
         <th>Description</th>
         <th>Poster</th>
         <th>Board</th>
+        <th>Action</th>
     </tr>
     <tr th:each="advertisement : ${advertisementDetails} ">
         <td th:text="${advertisement.getAdID()}"></td>
         <td th:text="${advertisement.getDescription()}"></td>
         <td th:text="${advertisement.getPoster()}"></td>
         <td th:text="${advertisement.getBoardRID()}"></td>
+        <td><a th:href="@{editAdvertisement(advertisementId=${advertisement.adID})}">edit</a></td>
+        <td><a th:href="@{deleteAdvertisement(advertisementId=${advertisement.adID})}">delete</a></td>
     </tr>
 </table>
 
