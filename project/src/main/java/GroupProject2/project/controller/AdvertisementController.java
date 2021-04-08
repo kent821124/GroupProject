@@ -60,7 +60,9 @@ public class AdvertisementController {
         List<Board> all = new ArrayList<>();
         for(Iterator<Board> itor = allData.iterator();itor.hasNext();){
             Board b = itor.next();
-            all.add(b);
+            if(b.getSpace()!=0){
+                all.add(b);
+            }
         }
         model.addAttribute("allBoardOption", all);
         
@@ -110,7 +112,9 @@ public class AdvertisementController {
         List<Board> all = new ArrayList<>();
         for(Iterator<Board> itor = allData.iterator();itor.hasNext();){
             Board b = itor.next();
-            all.add(b);
+            if(b.getSpace()!=0){
+                all.add(b);
+            }
         }
         model.addAttribute("allBoardOption", all);
         
