@@ -81,6 +81,8 @@ public class AdvertisementController {
         String boardID = advertisement.getBoard();
         Board b = findByBoardId(boardID);
         advertisement.setBoardRID(b.getBoardRID());
+        //set location
+        advertisement.setLocation(b.getLocation());
         //minus the board space
         useBoard(advertisement.getBoard());
         advertisementService.createAdvertisement(advertisement);
@@ -101,6 +103,8 @@ public class AdvertisementController {
         String boardID = advertisement.getBoard();
         Board b = findByBoardId(boardID);
         advertisement.setBoardRID(b.getBoardRID());
+        //set location
+        advertisement.setLocation(b.getLocation());
         advertisementService.saveAdvertisement(advertisement);
 
         return new ModelAndView("redirect:/advertisement", model);
