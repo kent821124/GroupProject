@@ -185,4 +185,15 @@ public class AdvertisementController {
         }
         return null;
     }
+    // get the board in the certain position
+    private Board toTheBoard(String position){
+        Collection<Board> allData = boardService.getBoards();
+        Iterator<Board> iterator = allData.iterator();
+        Board a = new Board();
+        for(int i =0; i<Integer.parseInt(position);i++){
+            a = iterator.next();
+        }
+        return a;
+    }
+}
 }
