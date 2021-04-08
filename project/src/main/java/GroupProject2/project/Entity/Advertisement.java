@@ -10,6 +10,7 @@ public class Advertisement {
     private String description;
     private String poster;
     private String board;
+    private String location;
     private int boardRID;
 
     public Advertisement() {}
@@ -21,6 +22,13 @@ public class Advertisement {
         this.board = board;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
     public int getBoardRID() {
         return boardRID;
     }
