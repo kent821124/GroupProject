@@ -115,13 +115,12 @@ public class AdvertisementController {
         List<Board> all = new ArrayList<>();
         for(Iterator<Board> itor = allData.iterator();itor.hasNext();){
             Board b = itor.next();
-            if(b.getSpace()!=0){
-                all.add(b);
+            if(b.getBoardID().equals(holdBoardID)){
+                continue;
             }
+            all.add(b);
         }
-        if(all.isEmpty()){
-            all.add(findByBoardId(holdBoardID));
-        }
+        all.add(findByBoardId(holdBoardID));
         model.addAttribute("allBoardOption", all);
         
         model.addAttribute("advertisement",a);
